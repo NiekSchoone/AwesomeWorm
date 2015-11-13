@@ -16,6 +16,7 @@ public class PlayerDeath : MonoBehaviour
 
     void Die()
     {
+        Camera.main.GetComponent<CameraShake>().Shake(0.04f,0.001f);
         restart.SetActive(true);
         Destroy(GetComponent<PlayerControlScript>());
         GetComponent<Rigidbody2D>().gravityScale = 1;
